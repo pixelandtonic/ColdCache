@@ -21,3 +21,13 @@ To cache a portion of your template, just wrap it in `{% coldcache %}` and `{% e
     <p>Colder hearts.</p>
 {% endcoldcache %}
 ```
+
+## Changelog
+
+### 1.1
+
+* Updated to take advantage of new Craft 2.5 plugin features.
+
+### 1.0
+
+* Initial release.
