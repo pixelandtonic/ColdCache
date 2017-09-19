@@ -58,7 +58,7 @@ class ColdCache_Node extends \Twig_Node
 			->raw(");\n")
 			->write("if (!\$ignoreColdCache{$n}) {\n")
 			->indent()
-				->write("\$cacheKey{$n} = ");
+			->write("\$cacheKey{$n} = ");
 
 		if ($key)
 		{
@@ -70,19 +70,22 @@ class ColdCache_Node extends \Twig_Node
 		}
 
 		$compiler
-				->raw(";\n")
-				->write("\$cacheBody{$n} = \$cacheService->getTemplateCache(\$cacheKey{$n}, {$global});\n")
+			->raw(";\n")
+			->write("\$cacheBody{$n} = \$cacheService->getTemplateCache(\$cacheKey{$n}, {$global});\n")
 			->outdent()
+			->write(" } else {\n")
+			->indent()
+			->write("\$cacheBody{$n} = null;\n")
 			->write("}\n")
 			->write("if (empty(\$cacheBody{$n})) {\n")
 			->indent()
-				->write("ob_start();\n")
-				->subcompile($this->getNode('body'))
-				->write("\$cacheBody{$n} = ob_get_clean();\n")
-				->write("if (!\$ignoreColdCache{$n}) {\n")
-				->indent()
-					->write("\$cacheService->startTemplateCache(\$cacheKey{$n});\n")
-					->write("\$cacheService->endTemplateCache(\$cacheKey{$n}, {$global}, ");
+			->write("ob_start();\n")
+			->subcompile($this->getNode('body'))
+			->write("\$cacheBody{$n} = ob_get_clean();\n")
+			->write("if (!\$ignoreColdCache{$n}) {\n")
+			->indent()
+			->write("\$cacheService->startTemplateCache(\$cacheKey{$n});\n")
+			->write("\$cacheService->endTemplateCache(\$cacheKey{$n}, {$global}, ");
 
 		if ($durationNum)
 		{
@@ -120,9 +123,9 @@ class ColdCache_Node extends \Twig_Node
 		}
 
 		$compiler
-					->raw(", \$cacheBody{$n});\n")
-				->outdent()
-				->write("}\n")
+			->raw(", \$cacheBody{$n});\n")
+			->outdent()
+			->write("}\n")
 			->outdent()
 			->write("}\n")
 			->write("echo \$cacheBody{$n};\n");
