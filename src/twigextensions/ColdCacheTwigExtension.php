@@ -1,6 +1,5 @@
 <?php
-namespace Craft;
-
+namespace craft\coldcache\twigextensions;
 /**
  * Class ColdCacheTwigExtension
  */
@@ -14,7 +13,7 @@ class ColdCacheTwigExtension extends \Twig_Extension
 	 *
 	 * @return string The extension name
 	 */
-	public function getName()
+	public function getName(): string
 	{
 		return 'coldcache';
 	}
@@ -24,7 +23,7 @@ class ColdCacheTwigExtension extends \Twig_Extension
 	 *
 	 * @return array An array of Twig_TokenParserInterface or Twig_TokenParserBrokerInterface instances
 	 */
-	public function getTokenParsers()
+	public function getTokenParsers(): array
 	{
 		return array(
 			new ColdCache_TokenParser(),

@@ -1,0 +1,50 @@
+{
+  "name": "craftcms/cold-cache",
+  "description": "This plugin adds a new “Store Hours” field type to Craft, for collecting the opening and closing hours of a business for each day of the week.",
+  "version": "2.0.4",
+  "type": "craft-plugin",
+  "keywords": [
+    "html",
+    "hours",
+    "store",
+    "cms",
+    "craftcms",
+    "json",
+    "yii2"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Pixel & Tonic",
+      "homepage": "https://pixelandtonic.com/"
+    }
+  ],
+  "support": {
+    "email": "support@craftcms.com",
+    "issues": "https://github.com/craftcms/cold-cache/issues?state=open",
+    "source": "https://github.com/craftcms/cold-cache",
+    "docs": "https://github.com/craftcms/cold-cache",
+    "rss": "https://github.com/craftcms/cold-cache/commits/v2.atom"
+  },
+  "require": {
+    "craftcms/cms": "~3.0.0-beta.20"
+  },
+  "autoload": {
+    "psr-4": {
+      "craft\\coldcache\\": "src/"
+    }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ],
+  "extra": {
+    "name": "Cold Cache",
+    "handle": "cold-cache",
+    "schemaVersion": "1.0.2",
+    "changelogUrl": "https://raw.githubusercontent.com/craftcms/cold-cache/v2/CHANGELOG.md",
+    "downloadUrl": "https://github.com/craftcms/cold-cache/archive/v2.zip"
+  }
+}
