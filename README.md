@@ -24,7 +24,11 @@ To cache a portion of your template, just wrap it in `{% coldcache %}` and `{% e
 
 ## Changelog
 
-### 1.1.1
+### 2.0.0
+
+* Added Craft 3 compatibility 
+
+### 1.1.1 
 
 * Fixed a bug where cached content could be duplicated in a Live Preview request.
 
